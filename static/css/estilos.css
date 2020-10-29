@@ -1,0 +1,111 @@
+h1{
+    color: white;
+}
+
+.footer{
+    color: white;
+    background: rgb(86,15,154);
+    background: linear-gradient(90deg, rgba(86,15,154,1) 0%, rgba(9,61,121,1) 51%, rgba(0,255,237,1) 100%);
+}
+.footer a{
+    color: white;
+}
+#navStyle{
+    background: rgb(86,15,154);
+    background: linear-gradient(90deg, rgba(86,15,154,1) 0%, rgba(9,61,121,1) 51%, rgba(0,255,237,1) 100%);
+}
+.banner2{
+    display: none;
+}
+.vtp{
+    display: block;
+    margin: auto;
+}
+.sidebar
+{
+    width: 18%;
+    margin-left: 1%;
+    margin-top: 20%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+}
+.sidebar2
+{
+    width: 18%;
+    margin-left: 1%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+}
+h3{
+    color: white;
+    text-align: center;
+    font-size: large;
+}
+
+h4{
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+.sidebar button{
+    background-color: aliceblue;
+    color: black;
+}
+
+.cuadro{
+    background-color: rgba(233, 241, 241, 0.774);
+    border: black 0.5px solid;
+}
+
+
+.cuadro img{
+    display: block;
+    margin: auto;
+}
+
+@media screen and (max-width: 800px){
+    .banner1{
+        display: none;
+    }
+    .banner2{
+        display: block;
+    }
+}
+.cuerpo{
+    background-color: white;
+}
+.centro{
+    text-align: center;
+}
+h2{
+    color: black;
+}
+
+.card{
+    background: rgb(86,15,154);
+    background: linear-gradient(90deg, rgba(86,15,154,1) 0%, rgba(51,9,121,1) 52%, rgba(0,54,255,1) 100%);
+}
+
+.parrafo{
+    border-style: ridge;
+    border-color: black;
+    border-radius: 2%;
+    
+}
+.empresaT{
+    color: black;
+}
+
+
+/*
+Paleta
+
+Fuerte: #E6C3C3
+Cuerpo: #E6D4D4
+Ligero: #E9E1E1
+Footer: #A3A0A0
+
+
+*/

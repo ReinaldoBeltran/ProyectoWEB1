@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+</head>
+
+<body style="background: rgb(86,15,154);
+background: linear-gradient(90deg, rgba(86,15,154,1) 0%, rgba(9,61,121,1) 51%, rgba(0,255,237,1) 100%);">   
+     {% extends "navbar.html" %}
+
+        {% block body %}
+
+     
+    <div class="container mt-5 mb-5">
+
+        <div class="row">
+        
+        <div class="col-6">
+            <a href="/" class="btn btn-primary btn-lg" style="width: 100%;">Inicio</a>
+            <br>
+            <br>
+            
+            <a href="/Categorias" class="btn btn-primary btn-lg" style="width: 100%;">Registrar Categoria</a>
+            <br>
+            <br>
+
+            <a href="/Empresa" class="btn btn-primary btn-lg" style="width: 100%;">Modificar Empresa</a>
+            <br>
+            <br>
+            <a href="/User" class="btn btn-primary btn-lg" style="width: 100%;">Administradores</a>
+        
+        </div>
+        <div style="background-color: rgb(249, 250, 250);" class="col-6">
+        <form action="/RegistrarProducto_Subida" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <div class="form-group">
+<br>
+                    <label for="name">Nombre: </label> <input required maxlength="20" class="form-control" type="text" name="name">
+                </div>
+                <div class="form-group">
+
+                    <label for="referencia">Referencia: </label> <input required class="form-control" type="text" name="referencia" id="">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label> <input required class="form-control" type="text" name="descripcion" id=""></input>
+                </div>
+                <div class="form-group">
+                    <label for="Detalle">Detalle:</label> <input required class="form-control" type="text" name="detalle" id=""></input>
+                </div>
+                <div class="form-group">
+                    <label for="valor">Valor: </label> <input required maxlength="20" class="form-control" type="number" name="valor">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Categoria</label>
+                    <select class="form-control"  name="categ" id="exampleFormControlSelect1">
+                        {% for cat in categorias %}
+                        <option value="{{ cat[0] }}">{{ cat[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <label for="imagen">Imagen</label>
+                <input required class="form-control" type="file" name="imagen">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <br>
+        </form>
+        <br>
+        </div>
+        </div>
+    </div>
+
+    <style>
+        th{
+            border: rgb(5, 5, 5) 1px solid;
+        }
+      
+        
+        
+    </style>
+
+    <table style="background: white;" class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th style="border: rgb(7, 7, 7) 1px solid;">ID</th>
+            <th style="border: rgb(12, 12, 12) 1px solid;">Nombre</th>
+            <th style="border: rgb(5, 5, 5) 1px solid;">Descripcion</th>
+            <th style="border: rgb(8, 8, 8) 1px solid;">Precio</th>
+            <th style="border: rgb(3, 3, 3) 1px solid;">Categoria</th>
+            <th style="border: rgb(3, 3, 3) 1px solid;">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in productos %}
+        <tr>
+            <th>{{p[0]}}</th>
+            <th>{{p[2]}}</th>
+            <th>{{p[3]}}</th>
+            <th>{{p[5]}}</th>
+            <th>{{p[7]}}</th>
+            <th><a href="/EditProducto/{{p[0]}}" class="btn btn-info">Editar</a> <a href="/Eliminar/{{p[0]}}" class="btn btn-danger">Eliminar</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+</tbody>
+
+    {% endblock %}}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
